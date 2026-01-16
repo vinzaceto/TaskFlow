@@ -1,0 +1,166 @@
+.task-item {
+    background: var(--bg-card);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-left: 4px solid var(--border-color);
+    /* Default border color */
+    transition: all 0.2s ease;
+    margin-bottom: var(--spacing-md);
+}
+
+.task-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateX(2px);
+}
+
+/* Category borders - These use color tags which are fine */
+.task-item.border-blue {
+    border-left-color: var(--color-tag-work);
+}
+
+.task-item.border-orange {
+    border-left-color: var(--color-tag-shopping);
+}
+
+.task-item.border-red {
+    border-left-color: var(--color-tag-health);
+}
+
+.task-item.border-green {
+    border-left-color: var(--color-tag-personal);
+}
+
+.task-item.completed {
+    opacity: 0.7;
+    background-color: var(--bg-input);
+    /* Use semantic bg-input which is slightly different from card in light, dark matches */
+}
+
+.task-item.completed .task-title {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.task-left {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    flex: 1;
+}
+
+.check-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--text-muted);
+    background: var(--bg-card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: all 0.2s ease;
+    color: white;
+}
+
+.check-btn.checked {
+    background: var(--color-status-completed);
+    border-color: var(--color-status-completed);
+}
+
+.check-btn:hover:not(.checked) {
+    border-color: var(--color-primary);
+}
+
+.task-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.task-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.task-title {
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+}
+
+.category-tag {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    color: white;
+    /* Tags have colored backgrounds so white text is correct */
+    font-weight: var(--font-weight-medium);
+}
+
+/* Tag colors */
+.tag-blue {
+    background-color: var(--color-tag-work);
+}
+
+.tag-orange {
+    background-color: var(--color-tag-shopping);
+}
+
+.tag-red {
+    background-color: var(--color-tag-health);
+}
+
+.tag-green {
+    background-color: var(--color-tag-personal);
+}
+
+.tag-gray {
+    background-color: var(--text-muted);
+}
+
+
+.task-description {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+}
+
+.task-meta {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.due-date {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    background: var(--bg-input);
+    padding: 4px 8px;
+    border-radius: var(--radius-md);
+}
+
+.delete-btn {
+    color: var(--color-tag-health);
+    /* Red for delete */
+    background: transparent;
+    padding: 8px;
+    border-radius: var(--radius-md);
+    opacity: 0;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.task-item:hover .delete-btn {
+    opacity: 1;
+}
+
+.delete-btn:hover {
+    background: var(--bg-input);
+}

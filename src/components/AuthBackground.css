@@ -1,0 +1,133 @@
+.auth-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+    /* Make sure users can't click fake tasks */
+    background-color: #F8FAFC;
+}
+
+.auth-background-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    width: 110%;
+    /* Slightly wider to cover edges */
+    height: 110%;
+    /* Slightly taller */
+    transform: rotate(-5deg) translate(-5%, -5%);
+    /* Tilted look */
+    opacity: 0.8;
+}
+
+.fake-task-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #ccc;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    height: 100px;
+    opacity: 0.7;
+    transition: transform 0.3s ease;
+    animation: float 6s ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+}
+
+.fake-task-card:nth-child(2n) {
+    animation-duration: 7s;
+    transform: translateY(10px);
+}
+
+.fake-task-card:nth-child(3n) {
+    animation-duration: 8s;
+    transform: translateY(-5px);
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.fake-task-card.completed {
+    opacity: 0.5;
+}
+
+.fake-check-circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #E5E7EB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fake-check-circle.checked {
+    background-color: #10B981;
+    border-color: #10B981;
+}
+
+.fake-task-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.fake-task-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #374151;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    /* Standard property for compatibility */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.fake-task-card.completed .fake-task-title {
+    text-decoration: line-through;
+    color: #9CA3AF;
+}
+
+.fake-task-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.fake-task-tag {
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    color: white;
+    font-weight: 500;
+}
+
+.auth-background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradient overlay to fade tasks out and focus on center form */
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4) 0%, rgba(243, 244, 246, 0.8) 100%);
+    backdrop-filter: blur(2px);
+}

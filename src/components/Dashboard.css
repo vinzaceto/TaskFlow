@@ -1,0 +1,50 @@
+.dashboard {
+    width: 100%;
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-2xl);
+    /* Increased spacing */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+
+
+.logo-wrapper {
+    background: var(--color-primary);
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 169, 157, 0.4);
+}
+
+.app-header h1 {
+    font-size: 2rem;
+    font-weight: var(--font-weight-extrabold);
+    color: var(--text-primary);
+    line-height: 1.1;
+}
+
+.app-header p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.summary-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+    /* Increased spacing */
+}

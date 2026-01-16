@@ -1,0 +1,202 @@
+/* Auth.css */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Background handled by AuthBackground component */
+    position: relative;
+    overflow: hidden;
+    padding: var(--spacing-md);
+}
+
+.auth-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem 2.5rem;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    width: 100%;
+    max-width: 440px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    animation: slideUp 0.5s ease-out;
+    position: relative;
+    z-index: 10;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, #00A99D, #3B82F6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    /* Fallback for some browsers */
+}
+
+.auth-header p {
+    color: var(--color-text-medium);
+    font-size: 0.95rem;
+}
+
+.auth-error {
+    background-color: #FEF2F2;
+    color: #DC2626;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    border: 1px solid #FECACA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Scoped to auth-card to prevent leaking to other modals */
+.auth-card .form-group {
+    margin-bottom: 1.25rem;
+}
+
+.auth-card .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.auth-card .form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background-color: var(--bg-input);
+    color: var(--text-primary);
+}
+
+.auth-card .form-group input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background-color: var(--bg-card);
+    box-shadow: 0 0 0 4px rgba(0, 169, 157, 0.1);
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 0.875rem;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.primary-btn {
+    background: linear-gradient(to right, #00A99D, #008f85);
+    color: white;
+    margin-top: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 169, 157, 0.3);
+}
+
+.primary-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 8px -1px rgba(0, 169, 157, 0.4);
+}
+
+.primary-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.auth-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    color: var(--color-text-light);
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+    flex: 1;
+    border-top: 1px solid #E5E7EB;
+}
+
+.auth-divider span {
+    padding: 0 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Google Button Style */
+.google-btn {
+    background-color: #FFFFFF;
+    color: var(--color-text-dark);
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+    position: relative;
+    /* For icon positioning if needed */
+}
+
+.google-btn:hover:not(:disabled) {
+    background-color: #F8F9FA;
+    border-color: #D1D5DB;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.google-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    color: var(--color-text-medium);
+}
+
+.auth-footer span {
+    color: var(--color-primary);
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: 0.25rem;
+}
+
+.auth-footer span:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,95 @@
+.summary-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--shadow-sm);
+    min-height: 140px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--border-color);
+    /* Added for dark mode definition */
+}
+
+.summary-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+}
+
+.summary-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Specific colors - These are backgrounds and text so they might need tweak for really dark mode 
+   but usually pastel backgrounds on small elements are okay or we can make them dynamic */
+.summary-icon-wrapper.total {
+    background: #E0F2FE;
+    color: var(--color-status-total);
+}
+
+.summary-icon-wrapper.pending {
+    background: #FFF7ED;
+    color: var(--color-status-pending);
+}
+
+.summary-icon-wrapper.completed {
+    background: #ECFDF5;
+    color: var(--color-status-completed);
+}
+
+.summary-decoration {
+    /* Decorative circle in top right */
+    width: 80px;
+    height: 80px;
+    background: currentColor;
+    opacity: 0.05;
+    border-radius: 50%;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    pointer-events: none;
+}
+
+.summary-card.total {
+    color: var(--color-status-total);
+}
+
+.summary-card.pending {
+    color: var(--color-status-pending);
+}
+
+.summary-card.completed {
+    color: var(--color-status-completed);
+}
+
+.summary-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-title {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.summary-count {
+    font-size: 2rem;
+    font-weight: var(--font-weight-extrabold);
+    color: var(--text-primary);
+}
