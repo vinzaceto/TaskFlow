@@ -2,7 +2,7 @@
 
 TaskFlow is a sleek, modern task management application designed to help users organize their daily lives with efficiency and style. Built from scratch with a focus on user experience, it combines a beautiful, responsive interface with robust cloud synchronization.
 
-![TaskFlow Dashboard](./screenshots/dashboard-preview.png)](https://taskflow-aceto-2026.web.app)
+![TaskFlow Dashboard](./screenshots/dashboard-preview.png)
 
 
 ### 🚀 **[Live Demo](https://taskflow-aceto-2026.web.app)**
@@ -88,4 +88,4 @@ firebase deploy --only hosting
 This project is open source and available under the [MIT License](LICENSE).
 
 ---
-*Built with ❤️ by [Your Name]*
+*Built with ❤️ by Vinz*
