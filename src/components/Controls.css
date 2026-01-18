@@ -98,3 +98,40 @@
 .btn-primary:active {
     transform: translateY(0);
 }
+
+@media (max-width: 768px) {
+    .controls-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--spacing-md);
+    }
+
+    .filter-tabs {
+        overflow-x: auto;
+        padding-bottom: 4px;
+        /* Space for scrollbar if needed */
+        max-width: 100%;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .filter-tab {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .controls-right {
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .category-select {
+        flex: 1;
+        min-width: 120px;
+    }
+
+    .btn-primary {
+        flex: 1;
+        justify-content: center;
+    }
+}

@@ -60,3 +60,31 @@
     background-color: var(--bg-input);
     color: var(--color-primary);
 }
+
+@media (max-width: 768px) {
+    .app-container {
+        padding: var(--spacing-md);
+        padding-top: 5.5rem;
+        /* Ensure space for header */
+    }
+
+    .header-actions {
+        top: 1rem;
+        right: 1rem;
+        padding: 0.25rem 0.5rem;
+        gap: var(--spacing-sm);
+    }
+
+    .user-email {
+        font-size: 0.8rem;
+        max-width: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .btn-logout {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+}

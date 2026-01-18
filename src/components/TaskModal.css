@@ -142,3 +142,31 @@
     background: var(--color-primary-hover);
     transform: translateY(-1px);
 }
+
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 1.5rem;
+        margin: 1rem;
+        max-height: 90vh;
+        /* Prevent overflow on small screens */
+        overflow-y: auto;
+    }
+
+    .modal-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .modal-actions {
+        flex-direction: column-reverse;
+        /* Stack buttons, submit on top usually better, or cancel bottom */
+        /* Actually standard mobile is often row, but if tight, stack. Let's keep row if fits, but if not: */
+        gap: var(--spacing-sm);
+    }
+
+    .btn-cancel,
+    .btn-submit {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+}
